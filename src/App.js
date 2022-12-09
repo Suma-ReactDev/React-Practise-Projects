@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import {Navbar, Home, Form1, Form2, Form3, Form4, Form5, Login, NoPageMatch, PaginationProvider} from './components/main';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <>
+      <PaginationProvider>
+      <Routes>
+        
+        <Route path='home' element={<Home />}/>
+        <Route path='form1' element={<Form1 />} />
+        <Route path='form2' element={<Form2 />} />
+        <Route path='form3' element={<Form3 />} />
+        <Route path='form4' element={<Form4 />} />
+        <Route path='form5' >
+          <Route index element={<Form5 />} />
+        </Route>
+        <Route path='/' element={<Login />} />
+        {/* <Route path ='/signup' element={<Signup />} /> */}
+        <Route path='*' element={<NoPageMatch />} />
+       
+      </Routes>
+      </PaginationProvider>
+      </>
+    </>
   );
 }
 
