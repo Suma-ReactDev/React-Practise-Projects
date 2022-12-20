@@ -15,7 +15,7 @@ const Home = () => {
     setAlert({show,type,msg})
   }
 
-  const baseUrl = `http://172.30.99.142:8081/api/users`;
+  const baseUrl = `http://localhost:8081/api/users`;
   
   const editItem=(id)=>{
     console.log(id)

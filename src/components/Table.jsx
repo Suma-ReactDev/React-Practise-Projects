@@ -7,8 +7,7 @@ const Table = ({ editItem, postRequest}) =>{
   const { users, setUsers, currentItems} = usePaginationContext();
   const th= 'p-3 m-2 border-white border-seperate border-2 ';
   const td ='p-2 m-2 text-center';
-  const baseUrl = `http://172.30.99.142:8081/api/users`;
-  const [query, setQuery] = useState("");
+  const baseUrl = `http://localhost:8081/api/users`;
 
   useEffect(()=>{
     sendRequest({url:`${baseUrl}`},setUsers);
